@@ -1,0 +1,62 @@
+{%  load static %}
+{%  static 'uploads' as baseUrl %}
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Cbz-Notes</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="shortcut icon" href="{% static 'images/Kishor-Publications.png'%}" type="image/x-icon">
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}"/>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="inner">
+					<h1>Kishor-Publication</h1>
+					<p>A Place for all your <a href="#">CBZ-Notes</a></p>
+				</div>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Banner -->
+					<section id="intro" class="main">
+						<span class="icon fa-diamond major"></span>
+						<h2></h2>
+						<ul class="actions">
+                            {% for pdf in pdfs %}
+							<li><a href="{{pdf.files.url}}" class="button big" style="margin-top: 5px">{{ pdf.sub_name}}</a></li>
+                            {% endfor %}
+						</ul>
+					<section id="cta" class="main special">
+						<h2>Kishor Publications</h2>
+						<p>The Sole Aim of this publication iS to provide CBZ Notes<br />
+						Everyone Can use it for absolutely free of cost <br />
+						Contact us for any Modifications.</p>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://twitter.com/kicchakishor021?s=09" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.facebook.com/kiccha.kishor.33" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://www.linkedin.com/in/kicchakishor-creations-2030b718b" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="mailto: kicchakishor025@gmail.com" class="icon fa-envelope"><span class="label" >Email</span></a></li>
+						</ul>
+                    </footer>
+
+
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+            </div>
+	</body>
+</html>
