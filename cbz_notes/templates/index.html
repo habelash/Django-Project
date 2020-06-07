@@ -9,6 +9,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="shortcut icon" href="{% static 'images/Kishor-Publications.png'%}" type="image/x-icon">
 		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="{% static 'assets/css/dropdown.css' %}">
+        <link rel="stylesheet" href="https://codepen.io/sean_codes/pen/e6f1ea02b2c69845a796acd688299990.css?v=13">
 	</head>
 	<body>
 
@@ -32,6 +35,22 @@
 							<li><a href="{{pdf.files.url}}" class="button big" style="margin-top: 5px">{{ pdf.sub_name}}</a></li>
                             {% endfor %}
 						</ul>
+                    <section style="margin-left:35%;">
+                        <nav>
+                            <menu>
+                                <menuitem id="demo1">
+                                    <a>Other Chemistry Materials</a>
+                                    <menu>
+                                        {% for chems in chem %}
+                                        <menuitem><a href="{{chems.files.url}}">{{  chems.sub_name}}</a></menuitem>
+                                        {% endfor %}
+                                    </menu>
+                                </menuitem>
+                            </menu>
+                        </nav>
+                    </section>
+                    </section>
+
 					<section id="cta" class="main special">
 						<h2>Kishor Publications</h2>
 						<p>The Sole Aim of this publication iS to provide CBZ Notes<br />
@@ -51,12 +70,10 @@
                     </footer>
 
 
-
 		<!-- Scripts -->
 			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
 			<script src="{% static 'assets/js/skel.min.js' %}"></script>
 			<script src="{% static 'assets/js/util.js' %}"></script>
-			<script src="{% static 'assets/js/main.js' %}"></script>
             </div>
 	</body>
 </html>
